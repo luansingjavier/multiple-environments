@@ -1,0 +1,58 @@
+{
+  "name": "coach",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "ios:staging": "react-native run-ios --scheme 'coach-staging' --simulator='iPhone 13 Pro Max'",
+    "ios:uat": "react-native run-ios --scheme 'coach-uat' --simulator='iPhone 13 Pro Max'",
+    "ios:production": "react-native run-ios --scheme 'coach' --simulator='iPhone 13 Pro Max'",
+    "android:staging": "react-native run-android --variant=stagingdebug --appIdSuffix=staging",
+    "android:uat": "react-native run-android --variant=uatdebug --appIdSuffix=uat",
+    "android:production": "react-native run-android --variant=productiondebug",
+    "android:staging-release": "react-native run-android --variant=stagingrelease --appIdSuffix=staging",
+    "android:uat-release": "react-native run-android --variant=uatrelease --appIdSuffix=uat",
+    "android:production-release": "react-native run-android --variant=productionrelease",
+    "android:bundle-staging": "cd android && ENVFILE=.env.staging ./gradlew bundlestagingrelease",
+    "android:bundle-uat": "cd android && ENVFILE=.env.uat ./gradlew bundleuatrelease",
+    "android:bundle-production": "cd android && ENVFILE=.env.production ./gradlew bundleproductionrelease",
+    "android:apk-staging": "cd android && ENVFILE=.env.staging ./gradlew assemblestagingrelease",
+    "android:apk-uat": "cd android && ENVFILE=.env.uat ./gradlew assembleuatrelease",
+    "android:apk-production": "cd android && ENVFILE=.env.production ./gradlew assembleproductionrelease"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-native": "0.68.2",
+    "react-native-config": "^1.4.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/runtime": "^7.18.9",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@react-native-community/eslint-config": "^3.1.0",
+    "@types/jest": "^28.1.8",
+    "@types/react": "^18.0.17",
+    "@types/react-native": "^0.69.5",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^29.0.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^8.22.0",
+    "husky": "^8.0.1",
+    "jest": "^29.0.0",
+    "metro-react-native-babel-preset": "^0.72.1",
+    "prettier": "^2.7.1",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.8.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
